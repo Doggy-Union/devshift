@@ -1,0 +1,115 @@
+﻿doctype html
+html
+  head
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css')
+    link(rel='stylesheet', href='style.css')
+    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:100', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description' content='Freelance. We are the team of web-developers that can help you with creating your own site or providing services for existing one! Learn more about us!')
+    meta(name='theme-color' content='#185de7')
+    link(rel="icon" sizes="192x192" href="favicon.png")
+    title DevShift | Web Developers Team
+  body
+    header
+      .button
+      h1 DevShift
+      h2 web-developers team
+      .persons
+        .item1
+          span.name Igor Fedosoff
+        .item2
+          span.name Gorislav Boyarchuk
+      .tale
+        span
+          | Web development is the constantly and fastly evolving field of IT in which following the new standards is actually important. But it has to be done very carefully. We choose the technologies that bring simplicity, speed and reliability to the products, considering about support among the users. Web development for us is not just work but our favourite hobby :)
+    a(id="portfolio")
+    .content
+      .portfolio
+        h2
+          | Some of
+          br
+          | our works
+        .swiper-container
+          .swiper-wrapper
+            for work in res
+              .swiper-slide
+                .preview(style="background-image: url(#{work.preview})")
+                a(href="#{work.link}" target="_blank")
+                  span.description=work.title
+          .swiper-button-prev
+          .swiper-button-next
+      a(id="contacts")
+      .contacts
+        h2 Contacts
+        .contactsTable
+          .icons
+            .email
+            .email
+            .skype
+          .data
+            .data-line itgbo1321@gmail.com
+            .data-line kojlambus@gmail.com
+            .data-line ewgogh11
+      footer
+        | Developed by Gorislav Boyarchuk and
+        br
+        |  Igor Fedosoff. All rights are reserved 2017.
+    .hider
+      .menu
+        .menuElement
+          a(href='#contacts') Contacts
+        .menuElement
+          a(href='#portfolio') Portfolio
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
+    script.
+      var buttons = document.querySelector('div.button');
+      var hider = document.querySelector('div.hider');
+      hider.addEventListener('click', hideMenu);
+      function hideMenu(e) {
+      console.log(e.target);
+      if(e.target.classList.contains('hider')) {
+      hider.style.background = 'rgba(0, 0, 0, 0)';
+      setTimeout(function() {
+      hider.style.display = 'none';
+      }, 200);
+      }
+      if(e.target.tagName == 'A') {
+      hider.style.background = 'rgba(0, 0, 0, 0)';
+      setTimeout(function() {
+      hider.style.display = 'none';
+      }, 200);
+      }
+      }
+      function showMenu() {
+      hider.style.display = 'flex';
+      hider.style.visibility = 'visible';
+      setTimeout(function() {
+      hider.style.background = 'rgba(0, 0, 0, 0.9)';
+      }, 10);
+      }
+      buttons.addEventListener('click', showMenu);
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-100394971-1', 'auto');
+      ga('send', 'pageview');
+    script.
+      var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      // Navigation arrows
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      effect: 'coverflow',
+      coverflow: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows : false
+      }
+      })
