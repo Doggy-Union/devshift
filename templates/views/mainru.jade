@@ -12,30 +12,30 @@ html
     title DevShift | Web Developers Team
   body
     header
-      a.anotherLang(href='/ru') go Russian
       .button
+      a.anotherLang(href='/') go English
       h1 DevShift
-      h2 web-developers team
+      h2 команда веб-разработчиков
       .persons
         .item1
-          span.name Igor Fedosoff
+          span.name Игорь Федосов
         .item2
-          span.name Gorislav Boyarchuk
+          span.name Горислав Боярчук
       .tale
         div(style='margin: auto; max-width: 1000px;')
           span
-            | One can see how web changed our world. One can imagine how it will be changed in next years. Web technologies help people to communicate, to cooperate, and to make the world better.
-          span(style='font-weight: bold')  This is a true revolution. 
+            | Интернет изменил наш мир. Легко представить как он будет менять его в ближайшие годы. Веб-технологии помогают людям общаться, эффективно сотрудничать и делать мир лучше.
+          span(style='font-weight: bold')  Это настоящая революция. 
           span
-            | And we take a part there. We are making your information simpler to learn. Easier to find. More comfortable to share. We make websites and web applications using flexible and powerful technologies that are changing the whole industry right now.
-        .learnButton(hidden) Learn more
+            | И мы - её часть. Мы делаем вашу информацию понятнее, легче для нахождения, удобнее для распространения. Мы создаём сайты и веб-приложения, используя мощные и универсальные технологии, которые меняют IT прямо сейчас.
+        .learnButton(hidden) Узнать больше
     a(id="portfolio")
     .content
       .portfolio
         h2
-          | Some of
+          | Некоторые
           br
-          | our works
+          | наши работы
         .swiper-container
           .swiper-wrapper
             for work in res
@@ -47,7 +47,7 @@ html
           .swiper-button-next
       a(id="contacts")
       .contacts
-        h2 Contacts
+        h2 Контакты
         .contactsTable
           .icons
             .email
@@ -64,13 +64,13 @@ html
     .hider
       .menu
         .menuElement
-          a(href='#contacts') Contacts
+          a(href='#contacts') Контакты
         .menuElement
-          a(href='#portfolio') Portfolio
+          a(href='#portfolio') Портфолио
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
     script.
       var al = document.querySelector('a.anotherLang');
-      al.addEventListener('click', function() { document.cookie="preflang=ru-RU"; });
+      al.addEventListener('click', function() { document.cookie="preflang=en-US"; });
       var buttons = document.querySelector('div.button');
       var hider = document.querySelector('div.hider');
       hider.addEventListener('click', hideMenu);
