@@ -1,0 +1,19 @@
+h1, h2, span, .content, form, .openButton, .closeButton, .error, .printButton {
+	display: none !important;
+}
+
+table {
+	border-spacing: 0;
+	border: 1px solid black;
+}
+
+td, th {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.printHeader {
+	display: block !important;
+	text-align: center;
+	font-size: 28px;
+}

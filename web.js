@@ -24,6 +24,7 @@ keystone.init({
   },
 
   'session': true,
+  'ssl': true,
   'auth': true,
   'user model': 'User',
   'cookie secret': 'LongRandomStringIsHere'

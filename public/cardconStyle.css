@@ -1,0 +1,185 @@
+﻿html {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 5px;
+	min-height: 100%;
+	min-width: 800px;
+	background-color: #666666;
+	color: white;
+	font-family: Verdana;
+	animation-name: appearing;
+	animation-duration: 0.7s;
+	position: relative;
+}
+
+.checked {
+	background: #d37700;
+}
+
+.error {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	margin: auto;
+	border-radius: 2px;
+	padding: 20px;
+	width: 400px;
+	color: white;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.content {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+input[type="text"] {
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 400px;
+	height: 50px;
+	font-size: 25px;
+	border: 2px solid #d37700;
+}
+
+form {
+	margin-top: 30px;
+}
+
+.schedule {
+	min-width: 400px;
+}
+
+.userSchedule {
+	background-color: rgba(0, 0, 0, 0.85);
+	position: fixed;
+	min-height: 100vh;
+	min-width: 100vw;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow-y: auto;
+	text-align: center;
+}
+
+.userScheduleTable {
+	min-width: 100%;
+}
+
+.closeButton {
+	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	border: white solid 2px;
+	border-radius: 100%;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	background: url(cardconCross.png) no-repeat center center #d37700;
+	background-size: 50% 50%;
+}
+
+.openButton {
+	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	border: white solid 2px;
+	border-radius: 100%;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 20px;
+	background-color: #d37700;
+	box-shadow: 0px 4px 10px 1px black;
+}
+
+.openButton:hover {
+	cursor: pointer;
+}
+
+.userSchedule > h2 {
+	font-size: 50px;
+}
+
+.userSchedule > span {
+	text-align: center;
+	font-size: 12px;
+}
+
+td {
+	padding: 15px;
+	text-align: center;
+	font-size: 18px;
+	border-top: 2px solid #d37700;
+}
+
+td:hover {
+	cursor: pointer;
+}
+
+th {
+	padding: 15px 0 15px 0;
+	font-size: 20px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 30px;
+}
+
+h2 {
+	text-align: center;
+}
+
+td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+	font-weight: bold;
+}
+
+.moreButton {
+	font-weight: bold;
+	color: grey;
+}
+
+.moreButton:hover {
+	color: #AAAAAA;
+	cursor: pointer;
+}
+
+@keyframes appearing {
+	0% {left: -20px; opacity: 0;}
+	100% {left: 0px; opacity: 1;}
+}
+
+table {
+	border-spacing: 0;
+}
+
+.printHeader {
+	display: none;
+}
+
+.printButton {
+	border: 0;
+	border-radius: 2px;
+	display: block;
+	margin: auto;
+	width: 350px;
+	height: 75px;
+	font-size: 45px;
+	background-color: #d37700;
+	color: white;
+	margin: 30px auto 30px auto;
+}
