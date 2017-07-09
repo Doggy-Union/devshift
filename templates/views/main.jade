@@ -12,7 +12,9 @@ html
     title DevShift | Web Developers Team
   body
     header
-      a.anotherLang(href='/ru') go Russian
+      a.anotherLang(href='/ru')
+        img(src='https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg')
+        span RUSSIAN
       .button
       h1 DevShift
       h2 web-developers team
@@ -70,7 +72,7 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
     script.
       var al = document.querySelector('a.anotherLang');
-      al.addEventListener('click', function() { document.cookie="preflang=ru-RU"; });
+      al.addEventListener('click', function() { document.cookie="preflang=ru-RU;expires=" + new Date('2038').toUTCString() + ';'; });
       var buttons = document.querySelector('div.button');
       var hider = document.querySelector('div.hider');
       hider.addEventListener('click', hideMenu);

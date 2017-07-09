@@ -13,7 +13,9 @@ html
   body
     header
       .button
-      a.anotherLang(href='/') go English
+      a.anotherLang(href='/')
+        img(src='https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg')
+        span ENGLISH
       h1 DevShift
       h2 команда веб-разработчиков
       .persons
@@ -70,7 +72,7 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
     script.
       var al = document.querySelector('a.anotherLang');
-      al.addEventListener('click', function() { document.cookie="preflang=en-US"; });
+      al.addEventListener('click', function() { document.cookie="preflang=en-US;expires=" + new Date('2038').toUTCString() + ';'; });
       var buttons = document.querySelector('div.button');
       var hider = document.querySelector('div.hider');
       hider.addEventListener('click', hideMenu);
