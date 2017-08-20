@@ -1,125 +1,200 @@
 ﻿doctype html
-html
+html(lang='ru')
   head
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css')
+    meta(charset='UTF-8')
+    title Devshift Landing
+    link(rel='stylesheet', href='bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Slab', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
     link(rel='stylesheet', href='style.css')
-    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Roboto:100', rel='stylesheet')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description' content='Freelance. We are the team of web-developers that can help you with creating your own site or providing services for existing one! Learn more about us!')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    link(rel='stylesheet', href='menustyles.css')
+    link(rel='alternate', hreflang='ru', href='https://devshift.co.uk/ru')
+    link(rel='alternate', hreflang='en', href='https://devshift.co.uk/')
+    meta(name='description' content='Реклама в Интернет и веб-разработка — сайты, которые действительно работают на ваш бизнес!')
     meta(name='theme-color' content='#185de7')
     link(rel="icon" sizes="192x192" href="favicon.png")
-    title DevShift | Web Developers Team
+    style.
+      @media screen and (max-width: 362px) {
+      header h1 {
+      font-size: 55px;
+      }
+      }
+      article h2 {
+      font-size: 2.8em;
+      }
   body
     header
-      .button
-      a.anotherLang(href='/')
-        img(src='https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg')
-        span ENGLISH
-      h1 DevShift
-      h2 команда веб-разработчиков
-      .persons
-        .item1
-          span.name Игорь Федосов
-        .item2
-          span.name Горислав Боярчук
-      .tale
-        div(style='margin: auto; max-width: 1000px;')
-          span
-            | Интернет изменил наш мир. Легко представить как он будет менять его в ближайшие годы. Веб-технологии помогают людям общаться, эффективно сотрудничать и делать мир лучше.
-          span(style='font-weight: bold')  Это настоящая революция. 
-          span
-            | И мы - её часть. Мы делаем вашу информацию понятнее, легче для нахождения, удобнее для распространения. Мы создаём сайты и веб-приложения, используя мощные и универсальные технологии, которые меняют IT прямо сейчас.
-        .learnButton(hidden) Узнать больше
-    a(id="portfolio")
-    .content
-      .portfolio
-        h2
-          | Некоторые
-          br
-          | наши работы
-        .swiper-container
-          .swiper-wrapper
-            for work in res
-              .swiper-slide
-                .preview(style="background-image: url(#{work.preview})")
-                a(href="#{work.link}" target="_blank")
-                  span.description=work.title
-          .swiper-button-prev
-          .swiper-button-next
-      a(id="contacts")
-      .contacts
-        h2 Контакты
-        .contactsTable
-          .icons
-            .email
-            .email
-            .skype
-          .data
-            .data-line itgbo1321@gmail.com
-            .data-line kojlambus@gmail.com
-            .data-line ewgogh11
-      footer
-        | Developed by Gorislav Boyarchuk and
-        br
-        |  Igor Fedosoff. All rights are reserved 2017.
+      div(style='padding: 0 15px 0 15px; position: absolute; min-width: 100%;')
+        a(href='/')
+          .logo DevShift
+        button.button.menu
+      #home.container
+        .heading
+          h1
+            b Увеличьте доход
+            |  от вашего бизнеса
+          button#learnhow.button.cta.col-xs-12.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3 УЗНАТЬ КАК
+    article
+      #howisit.container
+        .col-xs-12.col-lg-8.col-lg-offset-2
+          h2 И как же?
+          p
+            | Большая группа людей, нуждающаяся в ваших уникальных товарах и услугах все 
+            b еще не подозревает
+            |  о вашем существовании. Мы можем помочь им связаться с вами.
+          p
+            | Слышали ли вы о 
+            b digital marketing
+            | ? Это маркетинг, который работает в Интернете, на мобильных устройствах и всём, что подключено к сети.
+          p
+            b Реклама в интернете
+            |  - это огромный рынок, показывающий резульаты, подтверждаемые большим количеством предпринимателей и компаний.
+          img(src='google-revenue-2017-ru.jpg', alt='Компания Alphabet(владелец Google)заработает 73,8миллиардов долларовв 2017 году благодарярекламе в Интернет.')
+          p
+            | Посмотрите вокруг и заметьте как много людей используют мобильные устройства в наше время. По данным исследовательской компании Mediascope, 
+            b 71% населения Российской Федерации (87 млн. человек)
+            |  пользуется тем, что предоставляет 
+            b Интернет
+            | . Они общаются с друзьями и близкими, смотрят видео или ищут товары и услуги для покупки онлайн. Все эти вполне обычные ситуации представляют из себя 
+            b возможности развития для вашего бизнеса
+            | .
+          img(src='active-users-of-internet-in-russia.jpg', alt='71% населенияРоссийской Федерацииявляются активнымипользователями сети“Интернет”')
+          p
+            | Digital marketing — это то, что может привести в ваш бизнес клиентов и 
+            b увеличить вашу прибыль
+            | , 
+            i
+              | а мы — это те люди, которые помогут эффективно использовать рекламу в Интернете именно для вашего бизнеса!
+          // </div>
+          h2 Мы предлагаем
+          // <div class="col-xs-12 col-lg-8 col-lg-offset-1">
+          p
+            | Мы предоставляем широкий круг рекламных услуг в Интернет: разработка веб-сайтов, поисковая оптимизация, контекстная реклама, реклама в социальных медиа, интернет-магазины, таргетирование, ретаргетинг и аналитику. Вы можете узнать больше обо всем этом здесь: 
+            a https://devshift.co.uk/digital-marketing
+          p Качество нашей работы подтверждено сертификатами компании Google:
+          p
+            | Хотите узнать больше о нас или рекламе в Интернет? Посетите наш блог и страницы в социальных сетях!
+          p Уже готовы вывести ваш бизнес на новый уровень? Свяжитесь с нами!
+      section#contacts.contact-us.container
+        h2 Связаться
+        .description Write us on...
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-6.col-sm-6.col-sm-offset-0.col-lg-4
+          a(href='https://www.facebook.com/messages/t/100009826922234', target='_blank')
+            .button.facebook Facebook
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-6.col-sm-6.col-sm-6.col-sm-offset-0.col-lg-4
+          a(href='https://twitter.com/messages/compose?recipient_id=845276299438510080&text=Hello%2C+I%27ve+found+you+through+devshift.co.uk%21', target='_blank')
+            .button.twitter Twitter
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-offset-0.col-lg-4
+          a(href='https://vk.com/im?sel=158135093', target='_blank')
+            .button.vk VK
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-6.col-sm-offset-0.col-lg-4
+          a(href='https://www.upwork.com/freelancers/~01069245f3074b445b', target='_blank')
+            .button.upwork Upwork
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-offset-0.col-lg-4
+          #email.button.email E-mail
+        .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-offset-0.col-lg-4
+          a(href='tel:+79878924199')
+            #phone.button.phone(alt='+7 987 892 41 99') Телефон
+        .description.col-xs-12 or fill the form
+        form(action='/', method='post')
+          input.col-xs-12.col-sm-8.col-sm-offset-2(type='text', name='name', placeholder='Name')
+          input.col-xs-12.col-sm-8.col-sm-offset-2(type='email', name='email', placeholder='E-mail')
+          button.col-xs-6.col-xs-offset-3.submit(type='submit') Submit!
+    // la chose
+    aside
+      section.menuHeading
+        .closeMenu
+          div x
+        .logo DevShift
+      .currentPageLinks
+        a(href='#home') Главная
+        a(href='#howisit') 1. И как же?
+        a(href='#contacts') 2. Связаться с нами
+      .staticLinks
+        a(href='/blog/') Блог
+        a(href='https://vk.com/devshift') ВКонтакте
+        a(href='https://twitter.com/GorislavB') Twitter
+        a.anotherLang(href='/') АНГЛИЙСКИЙ (ENGLISH)
     .hider
-      .menu
-        .menuElement
-          a(href='#contacts') Контакты
-        .menuElement
-          a(href='#portfolio') Портфолио
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js')
+    // end
+    footer
+      .container
+        .links
+          a(href='') СВЯЗАТЬСЯ С НАМИ
+          a(href='/blog/') БЛОГ
+          a(href='privacy-policy-ru.htm') ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+          a(href='https://twitter.com/GorislavB') TWITTER
+          a(href='') О НАС
+          a(href='https://vk.com/devshift') ВКОНТАКТЕ
+        .footer-logo
+          span.text-logo DevShift
+          |  2017
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js')
     script.
       var al = document.querySelector('a.anotherLang');
       al.addEventListener('click', function() { document.cookie="preflang=en-US;expires=" + new Date('2038').toUTCString() + ';'; });
-      var buttons = document.querySelector('div.button');
-      var hider = document.querySelector('div.hider');
-      hider.addEventListener('click', hideMenu);
-      function hideMenu(e) {
-      console.log(e.target);
-      if(e.target.classList.contains('hider')) {
-      hider.style.background = 'rgba(0, 0, 0, 0)';
-      setTimeout(function() {
-      hider.style.display = 'none';
-      }, 200);
+      const hider = document.querySelector(".hider");
+      function hideWindow() {
+      hider.classList.add("show");
       }
-      if(e.target.tagName == 'A') {
-      hider.style.background = 'rgba(0, 0, 0, 0)';
-      setTimeout(function() {
-      hider.style.display = 'none';
-      }, 200);
+      function unhideWindow() {
+      hider.classList.remove("show");
       }
+      function restrictScroll() {
+      document.body.classList.add("noScroll");
       }
+      function allowScroll() {
+      document.body.classList.remove("noScroll");
+      }
+      const menu = document.querySelector("aside");
       function showMenu() {
-      hider.style.display = 'flex';
-      hider.style.visibility = 'visible';
-      setTimeout(function() {
-      hider.style.background = 'rgba(0, 0, 0, 0.9)';
-      }, 10);
+      menu.classList.add("open");
       }
-      buttons.addEventListener('click', showMenu);
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-100394971-1', 'auto');
-      ga('send', 'pageview');
-    script.
-      var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-      // Navigation arrows
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      effect: 'coverflow',
-      coverflow: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 2,
-      slideShadows : false
+      function hideMenu() {
+      menu.classList.remove("open");
       }
-      })
+      function openMenu() {
+      hideWindow();
+      showMenu();
+      }
+      function closeMenu() {
+      unhideWindow();
+      hideMenu();
+      }
+      var openMenuButton = document.querySelector(".button.menu");
+      openMenuButton.addEventListener("click", openMenu);
+      hider.addEventListener("click", closeMenu);
+      menu.addEventListener("click", function(e) {
+      if(e.target != menu) closeMenu(); //if user clicks not at menu option menu will not be closed
+      });
+      function smoothScrollIntoView(element, time) {
+      if(time === undefined) time = 400;
+      var lastPos = element.offsetTop;
+      var step = (lastPos - window.scrollY) / 25;
+      //if(window.scrollY == lastPos) return;
+      var i = 0;
+      var intID = setInterval(function() {
+      i++;
+      window.scrollBy(0, step);
+      if(i == 25) {
+      window.scroll(0, lastPos);
+      clearInterval(intID);
+      }
+      }, time / 25);
+      }
+      var links = document.body.querySelectorAll("A");
+      links.forEach(function(a) {
+      if(a.hash) a.addEventListener("click", smoothScrollForHashLinks);
+      });
+      function smoothScrollForHashLinks(e) {
+      smoothScrollIntoView(document.querySelector(this.hash), 1000);
+      e.preventDefault();
+      }
+      //document.body.addEventListener("click", smoothScrollForHashLinks);
+      var learnhow = document.getElementById("learnhow");
+      learnhow.addEventListener("click", function() {
+      smoothScrollIntoView(document.getElementById("howisit"), 1000);
+      e.preventDefault();
+      });
+    script(src='email-window.js')

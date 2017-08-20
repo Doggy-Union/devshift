@@ -1,0 +1,102 @@
+/** menu styles **/
+
+aside {
+	position: fixed;
+	transition: right 1s;
+	right: -320px;
+	top: 0;
+	width: 320px;
+	height: 100vh;
+	background: white;
+	padding: 0;
+	z-index: 2;
+}
+aside.open {
+	right: 0;
+}
+.menuHeading {
+	padding: 0;
+	width: 100%;
+	background: #0193f0;
+	position: relative;
+	display: table;
+}
+.menuHeading > * {
+	display: table-cell;
+}
+.closeMenu {
+	text-align: center;
+    vertical-align: middle;
+    padding: 10px 6px;
+    font-weight: 700;
+    color: white;
+    transition: 800ms;
+}
+.closeMenu > div {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: #cc3300;
+	border-radius: 2px;
+}
+.closeMenu > div:hover {
+	background: red;
+}
+.logo {
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    text-shadow: 0px 2px 5px black;
+	text-align: right;
+	font-size: 28pt;
+	padding-right: 5px;
+}
+aside > div {
+	border-bottom: 1px solid #ddd9db;
+	margin: 0 3%;
+}
+aside > div > a {
+	display: block;
+	transition: 1s;
+	padding: 5px;
+	margin: 2px 0;
+}
+aside > div > a:hover {
+	background-color: #ddd9db;
+	text-decoration: none;
+}
+
+
+aside > a {
+	display: block;
+	transition: all 1s;
+}
+aside > a > h2 {
+	margin: 0;
+	font-size: 16pt;
+	padding: 8px 30px;
+	cursor: pointer;
+}
+aside > a:hover {
+	background: rgba(0,0,0,0.2);
+}
+div.hider {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: -100%;
+	background: rgba(0,0,0, 0.5);
+	transition: opacity 1s;
+}
+div.hider.show {
+	right: 0;
+
+}
+.noScroll {
+	overflow: hidden;
+}
+.button.menu {
+	position: fixed;
+	z-index: 1;
+	right: 20px;
+}
