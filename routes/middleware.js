@@ -35,15 +35,12 @@ exports.flashMessages = function(req, res, next) {
 	};
 	
 	res.locals.messages = _.any(flashMessages, function(msgs) { return msgs.length; }) ?  flashMessages : false;
-	console.log('MESSAGES: ' + res.locals.messages);
 	
 	next();
 };
 
 exports.secureRedirect = function(req, res, next) {
-	console.log(req.protocol + " " + req.headers['x-forwarded-proto']);
 	if (req.headers['x-forwarded-proto'] === 'http') {
-		console.log('A REQUEST ON INSECURE CONNECTION');
 		res.redirect('https://' + req.headers.host + req.path);
 	} else {
 		next();
