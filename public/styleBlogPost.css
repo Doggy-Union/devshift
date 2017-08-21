@@ -1,0 +1,214 @@
+body {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto Slab", sans-serif;
+	background: #e8e8e8;
+}
+header {
+	position: fixed;
+	height: 60px;
+	background: #00a5fb;
+	width: 100%;
+	text-align: center;
+    box-shadow: black 0px 1px 5px;
+}
+
+.menuWrapper a {
+	text-decoration: none;
+	color: white;
+}
+
+.menuWrapper a:active {
+	text-decoration: none;
+	color: white;
+}
+
+.menuWrapper a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.placeholder {
+	height: 60px;
+}
+.menuWrapper > * {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.logo {
+	position: relative;
+	color: white;
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+	transition: 1s;
+	font-family: 'Poiret One', cursive;
+	font-size: 35px;
+}
+
+.logo > sup {
+	font-weight: 100;
+}
+
+.menuWrapper {
+	display: inline-table !important;
+	/*table-layout: fixed;*/
+}
+.menuWrapper > button {
+	cursor: pointer;
+	border: none;
+	border-left: 2px solid #0089c6;
+	border-right: 2px solid #0089c6;
+	background: #00a5fb;
+	color: white;
+	height: 60px;
+	width: 60px;
+}
+.content, footer {
+	width: 100%;
+	max-width: 1000px;
+	display: block;
+	margin: auto;
+}
+
+.menuWrapper {
+	width: 100%;
+	display: inline-block;
+}
+
+.content > h1 {
+	font-family: "Poiret One", cursive;
+	font-size: 3em;
+	line-height: .9em;
+	text-align: left;
+	margin: 20px 0 0 0;
+}
+
+.content > p {
+	text-align: left;
+	font-weight: 300;
+	clear: both;
+}
+
+.content img {
+	margin-left: -15px;
+    max-width: calc(100% + 30px);
+}
+
+.content {
+	box-sizing: border-box;
+	height: 3000px;
+	background: white;
+	padding: 0 15px;
+    box-shadow: 0 0 5px 0px black;
+}
+
+.metainf {
+	display: inline-block;
+	color: #adadad;
+	margin: 15px 0;
+	font-family: "Poiret One", cursive;
+	font-size: 16px;
+	font-weight: 600;
+	float: right;
+}
+
+.commentsCount { text-align: left; }
+
+.pubDate { text-align: right; }
+
+.fastShare {
+	position: fixed;
+	background: #00a5fb;
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 50%;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+	color: white;
+	font-size: 35px;
+	box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.65);
+	transition: box-shadow 0.2s;
+}
+
+.fastShare:hover {
+	box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.65);
+}
+
+.menu {
+	font-size: 40px;
+	overflow: hidden;
+	transition: 1s;
+}
+.search {
+	font-size: 35px;
+}
+.search > input {
+	display: inline-block;
+}
+.previewWrapper {
+	width: calc(100% + 30px);
+	margin-left: -15px;
+	height: 300px;
+	overflow: hidden;
+}
+.previewWrapper > .preview {
+	display: inline-block;
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+}
+
+.image {
+	margin: 25px 0;
+}
+
+.image > p {
+	margin: 5px 0 0 0;
+	font-style: italic;
+	color: #a1a1a1;
+	font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+	.asSearchfield > .menu, .asSearchfield > .logo {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 750px) {
+	body {
+		font-size: 20px;
+	}
+
+	.content > h1 {
+		font-size: 4.5em;
+		padding: 0 30px;
+	}
+}
+
+.searchbox {
+	width: 0%;
+	transition: 1s;
+}
+.asSearchfield > div.searchbox {
+	width: 100%;
+}
+.asSearchfield > div.searchbox > input {
+	width: 98%;
+	padding: 5px;
+}
+.searchbox > input {
+	transition: 1s;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 0;
+	height: 40px;
+	font-size: 25px;
+}
+	
