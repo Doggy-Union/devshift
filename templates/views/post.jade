@@ -1,13 +1,14 @@
 doctype html
 html
   head
-    title Devshift blogpost
-    link(rel='stylesheet', href='https://devshift.co.uk/styleBlogPost.css')
-    link(rel='stylesheet', href='https://devshift.co.uk/menustylesBlogPost.css')
+    title #{data.title} | DevShift
+    link(rel='stylesheet', href='../../../styleBlogPost.css')
+    link(rel='stylesheet', href='../../../menustylesBlogPost.css')
     script(src='https://use.fontawesome.com/98b531be56.js')
     meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
     link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', rel='stylesheet')
+    !=data.headInsert
   body
     header
       .menuWrapper
@@ -31,7 +32,7 @@ html
       .currentPageLinks
         a(href='#home') Home
         a(href='#howisit') About
-        a(href='#contacts') Contacts
+        a(href='/#contacts') Contacts
       .staticLinks
         a Blog
         a Dog
@@ -42,13 +43,24 @@ html
     button.fastShare
       i.fa.fa-share-alt(aria-hidden='true')
     .content
-      .previewWrapper
-        img.preview(src=data.preview)
+      .previewWrapper(style="background-image: url(#{data.preview})")
+        //- img.preview(src=data.preview)
       h1=data.title
       .metainf
-        | - comments | #{data.pubDate}
+        | - comments | #{data.pubDate.toDateString()}
       != data.content
     footer
+      .container
+        .links
+          a(href='/#contacts') CONTACT US
+          a(href='/blog/') BLOG
+          a(href='privacy-policy.htm') PRIVACY POLICY
+          a(href='https://twitter.com/GorislavB') TWITTER
+          a(href='') ABOUT
+          a(href='https://vk.com/devshift') VK
+        .footer-logo
+          span.text-logo DevShift
+          |  2017
     script(src='https://devshift.co.uk/searchBlogPost.js')
     script.
       const hider = document.querySelector(".hider");

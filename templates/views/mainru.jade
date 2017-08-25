@@ -2,7 +2,7 @@
 html(lang='ru')
   head
     meta(charset='UTF-8')
-    title Devshift Landing
+    title DevShift | Веб-разработка и реклама в Интернет
     link(rel='stylesheet', href='bootstrap.min.css')
     link(href='https://fonts.googleapis.com/css?family=Roboto+Slab', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
@@ -11,6 +11,7 @@ html(lang='ru')
     link(rel='stylesheet', href='menustyles.css')
     link(rel='alternate', hreflang='ru', href='https://devshift.co.uk/ru')
     link(rel='alternate', hreflang='en', href='https://devshift.co.uk/')
+    link(rel='alternate', hreflang='x-default', href='https://devshift.co.uk/')
     meta(name='description' content='Реклама в Интернет и веб-разработка — сайты, которые действительно работают на ваш бизнес!')
     meta(name='theme-color' content='#185de7')
     link(rel="icon" sizes="192x192" href="favicon.png")
@@ -49,7 +50,7 @@ html(lang='ru')
             | ? Это маркетинг, который работает в Интернете, на мобильных устройствах и всём, что подключено к сети.
           p
             b Реклама в интернете
-            |  - это огромный рынок, показывающий резульаты, подтверждаемые большим количеством предпринимателей и компаний.
+            |  - это огромный рынок, показывающий результаты, подтверждаемые большим количеством предпринимателей и компаний.
           img(src='google-revenue-2017-ru.jpg', alt='Компания Alphabet(владелец Google)заработает 73,8миллиардов долларовв 2017 году благодарярекламе в Интернет.')
           p
             | Посмотрите вокруг и заметьте как много людей используют мобильные устройства в наше время. По данным исследовательской компании Mediascope, 
@@ -78,7 +79,7 @@ html(lang='ru')
           p Уже готовы вывести ваш бизнес на новый уровень? Свяжитесь с нами!
       section#contacts.contact-us.container
         h2 Связаться
-        .description Write us on...
+        .description с нами через
         .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-6.col-sm-6.col-sm-offset-0.col-lg-4
           a(href='https://www.facebook.com/messages/t/100009826922234', target='_blank')
             .button.facebook Facebook
@@ -87,7 +88,7 @@ html(lang='ru')
             .button.twitter Twitter
         .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-offset-0.col-lg-4
           a(href='https://vk.com/im?sel=158135093', target='_blank')
-            .button.vk VK
+            .button.vk ВКонтакте
         .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-6.col-sm-offset-0.col-lg-4
           a(href='https://www.upwork.com/freelancers/~01069245f3074b445b', target='_blank')
             .button.upwork Upwork
@@ -96,11 +97,11 @@ html(lang='ru')
         .col-xs-offset-2.col-xs-8.col-sm-6.col-sm-offset-0.col-lg-4
           a(href='tel:+79878924199')
             #phone.button.phone(alt='+7 987 892 41 99') Телефон
-        .description.col-xs-12 or fill the form
+        .description.col-xs-12 или заполните форму и мы свяжемся с вами по электронной почте
         form(action='/ru', method='post')
-          input.col-xs-12.col-sm-8.col-sm-offset-2(type='text', name='name', placeholder='Name')
+          input.col-xs-12.col-sm-8.col-sm-offset-2(type='text', name='name', placeholder='Имя')
           input.col-xs-12.col-sm-8.col-sm-offset-2(type='email', name='email', placeholder='E-mail')
-          button.col-xs-6.col-xs-offset-3.submit(type='submit') Submit!
+          button.col-xs-6.col-xs-offset-3.submit(type='submit') Готово
     // la chose
     aside
       section.menuHeading
@@ -115,13 +116,13 @@ html(lang='ru')
         a(href='/blog/') Блог
         a(href='https://vk.com/devshift') ВКонтакте
         a(href='https://twitter.com/GorislavB') Twitter
-        a.anotherLang(href='/') АНГЛИЙСКИЙ (ENGLISH)
+        a.anotherLang(href='/') Английский (English)
     .hider
     // end
     footer
       .container
         .links
-          a(href='') СВЯЗАТЬСЯ С НАМИ
+          a(href='#contacts') СВЯЗАТЬСЯ С НАМИ
           a(href='/blog/') БЛОГ
           a(href='privacy-policy-ru.htm') ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
           a(href='https://twitter.com/GorislavB') TWITTER

@@ -5,7 +5,8 @@ var Article = new keystone.List("Article", { autokey: {from: "title", path: "url
 
 Article.add({
 	title: { type: String, required: true, initial: true },
-	content: { type: Types.Html, required: true, initial: true },
+	content: { type: Types.Html, wysiwyg: true, required: true, initial: true },
+	headInsert: { type: Types.Html },
 	brief: { type: String, required: true, initial: true },
 	pubDate: { type: Types.Date, required: true, initial: true },
 	keywords: { type: String, required: true, initial: true },

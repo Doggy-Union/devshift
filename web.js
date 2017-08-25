@@ -11,8 +11,8 @@ keystone.init({
   'static': ['public'],
   'port': process.env.OPENSHIFT_NODEJS_PORT,
   'host': process.env.OPENSHIFT_NODEJS_IP,
-  //'port': 80,
-  //'host': 'localhost',
+  // 'port': 80,
+  // 'host': 'localhost',
   'env': 'production',
   
   'views': 'templates/views',
@@ -20,7 +20,7 @@ keystone.init({
   
   'auto update': true,
   'mongo': `mongodb://admin:hzWYLkXCky76@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}`,
-  //'mongo': 'localhost',
+  // 'mongo': 'localhost',
   
   'nav': {
 	User: 'User',

@@ -29,7 +29,9 @@ exports = module.exports = function(app) {
 	app.all('/' , routes.views.main);
 	app.all('/ru' , routes.views.mainru);
 	app.get('/blog', routes.views.blog);
+	app.get('/ru/blog', routes.views.blogRu);
 	app.get('/blog/post/:url', routes.views.postfinder);
+	app.get('/ru/blog/post/:url', routes.views.postfinderRu);
 	app.get('/.well-known/acme-challenge/:challengeHash', function(req, res) { // for Let's Encrypt
 	    var hash = req.params.challengeHash;
 	    res.send(hash + '.UlLLEEZQuSBOxhO8W20LKMtd6LhjEr39n5felDCXDPc');

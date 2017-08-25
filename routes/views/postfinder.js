@@ -4,7 +4,7 @@ var Article = keystone.list("Article");
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	view.on('init', function(next) {
-		var q = Article.model.find({"url": req.params.url}).select("title content preview pubDate keywords")
+		var q = Article.model.find({"url": req.params.url}).select("title content headInsert preview pubDate keywords")
 			.exec(function(error, result) {
 				console.log(result);
 				if(result.length == 0) {

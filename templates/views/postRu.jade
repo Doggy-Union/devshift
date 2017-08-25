@@ -1,0 +1,123 @@
+doctype html
+html
+  head
+    title #{data.title} | DevShift
+    link(rel='stylesheet', href='../../../styleBlogPost.css')
+    link(rel='stylesheet', href='../../../menustylesBlogPost.css')
+    script(src='https://use.fontawesome.com/98b531be56.js')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', rel='stylesheet')
+    !=data.headInsert
+  body
+    header
+      .menuWrapper
+        .searchbox
+          input(type='search')
+        button.search
+          i.fa.fa-search(aria-hidden='true')
+        a(href='/blog')
+          h1.logo
+            a(href='/blog')
+              | DevShift
+              sup blog
+        button.menu
+          i.fa.fa-bars(aria-hidden='true')
+    // la chose
+    aside
+      section.menuHeading
+        .closeMenu
+          i.fa.fa-times(aria-hidden='true')
+        .logo DevShift
+      .currentPageLinks
+        a(href='#home') Home
+        a(href='#howisit') About
+        a(href='/#contacts') Contacts
+      .staticLinks
+        a Blog
+        a Dog
+        a Main Bog
+    .hider
+    // end
+    .placeholder
+    button.fastShare
+      i.fa.fa-share-alt(aria-hidden='true')
+    .content
+      .previewWrapper(style="background-image: url(#{data.preview})")
+        //- img.preview(src=data.preview)
+      h1=data.title
+      .metainf
+        | - comments | #{data.pubDate.toDateString()}
+      != data.content
+    footer
+      .container
+        .links
+          a(href='/#contact') СВЯЗАТЬСЯ С НАМИ
+          a(href='/blog/') БЛОГ
+          a(href='privacy-policy.htm') ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+          a(href='https://twitter.com/GorislavB') TWITTER
+          a(href='') О НАС
+          a(href='https://vk.com/devshift') ВКОНТАКТЕ
+        .footer-logo
+          span.text-logo DevShift
+          |  2017
+    script(src='https://devshift.co.uk/searchBlogPost.js')
+    script.
+      const hider = document.querySelector(".hider");
+      function hideWindow() {
+      hider.classList.add("show");
+      }
+      function unhideWindow() {
+      hider.classList.remove("show");
+      }
+      function restrictScroll() {
+      document.body.classList.add("noScroll");
+      }
+      function allowScroll() {
+      document.body.classList.remove("noScroll");
+      }
+      const menu = document.querySelector("aside");
+      function showMenu() {
+      menu.classList.add("open");
+      }
+      function hideMenu() {
+      menu.classList.remove("open");
+      }
+      function openMenu() {
+      hideWindow();
+      showMenu();
+      }
+      function closeMenu() {
+      unhideWindow();
+      hideMenu();
+      }
+      var openMenuButton = document.querySelector("button.menu");
+      openMenuButton.addEventListener("click", openMenu);
+      hider.addEventListener("click", closeMenu);
+      menu.addEventListener("click", function(e) {
+      if(e.target != menu) closeMenu(); //if user clicks not at menu option menu will not be closed
+      });
+      function smoothScrollIntoView(element, time) {
+      if(time === undefined) time = 400;
+      var lastPos = element.offsetTop;
+      var step = (lastPos - window.scrollY) / 25;
+      //if(window.scrollY == lastPos) return;
+      var i = 0;
+      var intID = setInterval(function() {
+      i++;
+      window.scrollBy(0, step);
+      if(i == 25) {
+      window.scroll(0, lastPos);
+      clearInterval(intID);
+      }
+      }, time / 25);
+      }
+      var links = document.body.querySelectorAll("A");
+      links.forEach(function(a) {
+      if(a.hash) a.addEventListener("click", smoothScrollForHashLinks);
+      });
+      function smoothScrollForHashLinks(e) {
+      smoothScrollIntoView(document.querySelector(this.hash), 1000);
+      e.preventDefault();
+      }
+      //document.body.addEventListener("click", smoothScrollForHashLinks);

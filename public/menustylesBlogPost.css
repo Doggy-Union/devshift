@@ -91,6 +91,7 @@ div.hider {
 	right: -100%;
 	background: rgba(0,0,0, 0.5);
 	transition: opacity 1s;
+	z-index: 1;
 }
 div.hider.show {
 	right: 0;

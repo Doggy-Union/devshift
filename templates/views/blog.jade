@@ -1,8 +1,141 @@
+doctype html
 html
-	head
-	body
-		for work in posts
-			article
-				h1=work.title
-				div=work.brief
-				img(src=work.preview)
+  head
+    title Blog | DevShift
+    link(rel='stylesheet', href='../bootstrap.min.css')
+    link(rel='stylesheet', href='../../../styleBlogPost.css')
+    link(rel='stylesheet', href='../../../menustylesBlogPost.css')
+    link(rel="stylesheet", href="../../../styleBlogIndex.css")
+    script(src='https://use.fontawesome.com/98b531be56.js')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', rel='stylesheet')
+    link(rel="alternate", hreflang="en", href="https://devshift.co.uk/blog")
+    link(rel="alternate", hreflang="ru", href="https://devshift.co.uk/blog/ru")
+    link(rel="alternate", hreflang="x-default", href="https://devshift.co.uk/blog")
+  body
+    header
+      .menuWrapper
+        .searchbox
+          input(type='search')
+        button.search
+          i.fa.fa-search(aria-hidden='true')
+        a(href='/blog')
+          h1.logo
+            a(href='/blog')
+              | DevShift
+              sup blog
+        button.menu
+          i.fa.fa-bars(aria-hidden='true')
+    // la chose
+    aside
+      section.menuHeading
+        .closeMenu
+          i.fa.fa-times(aria-hidden='true')
+        .logo DevShift
+      .currentPageLinks
+        a(href='#home') Home
+        a(href='#howisit') About
+        a(href='/#contacts') Contacts
+      .staticLinks
+        a Blog
+        a Dog
+        a Main Bog
+    .hider
+    // end
+    .placeholder
+    button.fastShare
+      i.fa.fa-share-alt(aria-hidden='true')
+    .fluid-container
+      .col-xs-12
+        a(href="/blog/post/#{posts[0].url}")
+          .last.article(style="background-image: url(#{posts[0].preview})")
+            .title=posts[0].title
+      .col-sm-6.col-xs-12
+        a(href="/blog/post/#{posts[1].url}")
+          .article(style="background-image: url(#{posts[1].preview})")
+            .title=posts[1].title
+      .col-sm-6.col-xs-12
+        a(href="/blog/post/#{posts[2].url}")
+          .article(style="background-image: url(#{posts[2].preview})")
+            .title=posts[2].title
+      .col-sm-6.col-xs-12
+        a(href="/blog/post/#{posts[3].url}")
+          .article(style="background-image: url(#{posts[3].preview})")
+            .title=posts[3].title
+      .col-sm-6.col-xs-12
+        a(href="/blog/post/#{posts[4].url}")
+          .article(style="background-image: url(#{posts[4].preview})")
+            .title=posts[4].title
+    footer
+      .container
+        .links
+          a(href='/#contacts') CONTACT US
+          a(href='/blog/') BLOG
+          a(href='privacy-policy.htm') PRIVACY POLICY
+          a(href='https://twitter.com/GorislavB') TWITTER
+          a(href='') ABOUT
+          a(href='https://vk.com/devshift') VK
+        .footer-logo
+          span.text-logo DevShift
+          |  2017
+    script(src='https://devshift.co.uk/searchBlogPost.js')
+    script.
+      const hider = document.querySelector(".hider");
+      function hideWindow() {
+      hider.classList.add("show");
+      }
+      function unhideWindow() {
+      hider.classList.remove("show");
+      }
+      function restrictScroll() {
+      document.body.classList.add("noScroll");
+      }
+      function allowScroll() {
+      document.body.classList.remove("noScroll");
+      }
+      const menu = document.querySelector("aside");
+      function showMenu() {
+      menu.classList.add("open");
+      }
+      function hideMenu() {
+      menu.classList.remove("open");
+      }
+      function openMenu() {
+      hideWindow();
+      showMenu();
+      }
+      function closeMenu() {
+      unhideWindow();
+      hideMenu();
+      }
+      var openMenuButton = document.querySelector("button.menu");
+      openMenuButton.addEventListener("click", openMenu);
+      hider.addEventListener("click", closeMenu);
+      menu.addEventListener("click", function(e) {
+      if(e.target != menu) closeMenu(); //if user clicks not at menu option menu will not be closed
+      });
+      function smoothScrollIntoView(element, time) {
+      if(time === undefined) time = 400;
+      var lastPos = element.offsetTop;
+      var step = (lastPos - window.scrollY) / 25;
+      //if(window.scrollY == lastPos) return;
+      var i = 0;
+      var intID = setInterval(function() {
+      i++;
+      window.scrollBy(0, step);
+      if(i == 25) {
+      window.scroll(0, lastPos);
+      clearInterval(intID);
+      }
+      }, time / 25);
+      }
+      var links = document.body.querySelectorAll("A");
+      links.forEach(function(a) {
+      if(a.hash) a.addEventListener("click", smoothScrollForHashLinks);
+      });
+      function smoothScrollForHashLinks(e) {
+      smoothScrollIntoView(document.querySelector(this.hash), 1000);
+      e.preventDefault();
+      }
+      //document.body.addEventListener("click", smoothScrollForHashLinks);
